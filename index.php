@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 // Require autoload file
 require_once ('vendor/autoload.php');
 
-// Instantiate Fat-Fre
+// Instantiate Fat-Free
 $f3 = Base::instance();
 
 // Define default route
