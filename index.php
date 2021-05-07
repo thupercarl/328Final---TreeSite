@@ -19,5 +19,23 @@ $f3->route('GET /', function(){
     echo $view->render('views/home.html');
 });
 
+$f3->route('GET /results', function(){
+    //Display the results page
+    $view = new Template();
+    echo $view->render('views/results.html');
+});
+
+$f3->route('GET /login', function(){
+    //Display the login page
+    $view = new Template();
+    echo $view->render('views/login.html');
+});
+
+$f3->route('GET /user', function(){
+    //Display the user page
+    $view = new Template();
+    echo $view->render('views/user.html');
+});
+
 // Run Fat-Free
 $f3->run();
