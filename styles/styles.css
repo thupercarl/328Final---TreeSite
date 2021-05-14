@@ -1,3 +1,42 @@
+.backdrop-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../images/tree-247122_960_720.jpg");
+
+    min-height: 100%;
+    height: 100vh !important;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    overflow-y: hidden;
+}
+
+body {
+    background-color: #333335;
+}
+
+.navbar-expand-lg {
+    background-color: #559CAD;
+    opacity: 0.5;
+    transition: opacity 1s;
+}
+
+.navbar-expand-lg:hover {
+    background-color: #559CAD;
+    opacity: 1.0;
+}
+
+.btn {
+    background-color: #C1B2AB;
+}
+
+.jumbotron {
+    background-color: #9BE564;
+}
+
 p {
 
 }
