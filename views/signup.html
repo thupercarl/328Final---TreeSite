@@ -1,10 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<include href="includes/head.html" />
+<!--BOILER-PLATE INCLUDE-->
+
+<body>
+<include href="includes/navbar.html" />
+<!--ADD GENERAL NAVBAR-->
+
 <body>
 
+<div class="jumbotron bg-white backdrop-img mt-1">
+    <div class="text-center row">
+        <div class="col-12">
+            <!--BEGIN FORM-->
+            <form action="#" method="post" class="form-horizontal bg-white mb-5">
+                <div class="form-group">
+                    <h2>Signup</h2>
+
+                    <label for="fname" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="fname" id="fname">
+                    </div>
+
+                    <label for="lname" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="lname" id="lname">
+                    </div>
+
+                    <label for="username" class="col-sm-2 control-label">Desired Username</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="username" id="username">
+                    </div>
+
+                    <label for="password" class="col-sm-2 control-label">Desired Password</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="password" id="password">
+                    </div>
+
+                    <label for="repassword" class="col-sm-2 control-label">Retype Password</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="repassword" id="repassword">
+                    </div>
+                </div>
+                <br>
+
+                <!--SUBMIT BUTTON-->
+                <div class="col-xs-3 ">
+                    <input class="form-control btn btn-default"
+                           type="submit" value="Next">
+                </div>
+
+            </form>
+            <!--END FORM-->
+        </div>
+    </div>
+</div> <!--END JUMBOTRON-->
+
+<!--<include href="includes/footer.html" />-->
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
