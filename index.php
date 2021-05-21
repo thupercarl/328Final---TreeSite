@@ -123,6 +123,13 @@ $f3->route('GET /login', function(){
     echo $view->render('views/login.html');
 });
 
+// Define admin route
+$f3->route('GET /admin', function(){
+    //Display the login page
+    $view = new Template();
+    echo $view->render('views/admin.html');
+});
+
 // Define user page route
 $f3->route('GET /user', function(){
     //Display the user page
