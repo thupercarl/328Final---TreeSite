@@ -14,3 +14,8 @@ function validPassword($password)
 {
     return strLen(trim($password)) >= 2;
 }
+
+function matchPassword($password, $repassword)
+{
+    return $password == $repassword;
+}

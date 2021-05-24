@@ -90,7 +90,7 @@ $f3->route('GET|POST /signup', function($f3){
         }
 
         //If password is valid, store data
-        if(validPassword($_POST['repassword'])) {
+        if(matchPassword($_POST['password'],$_POST['repassword'])) {
             $_SESSION['repassword'] = $repassword;
         }
         //Otherwise, set an error variable in the hive
