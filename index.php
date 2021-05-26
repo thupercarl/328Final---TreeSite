@@ -18,6 +18,18 @@ $f3 = Base::instance();
 
 // Define default route
 $f3->route('GET /', function(){
+    //Connect to db
+    require_once('/home/adaviesg/config_trees.php');
+    try {
+        //Instantiate a PDO database object
+        $dbh = new PDO(DB_DSN,
+            DB_USERNAME, DB_PASSWORD);
+        echo "Connected to database!";
+    }
+    catch(PDOException $e) {
+        echo $e->getMessage();
+    }
+
     // Display the home page
     $view = new Template();
     echo $view->render('views/home.html');
