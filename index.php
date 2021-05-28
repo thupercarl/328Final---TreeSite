@@ -27,7 +27,7 @@ catch(PDOException $e) {
 // Instantiate Fat-Free
 $f3 = Base::instance();
 $con = new Controller($f3);
-$dataLayer = new DataLayer($dbh);
+//$dataLayer = new DataLayer($dbh);//Save this for when we create datalayer file
 
 // Define default route
 $f3->route('GET /', function(){
