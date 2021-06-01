@@ -24,7 +24,7 @@ catch(PDOException $e) {
     die("Shoot! We're having connection issues");
 }
 
-// Instantiate Fat-Free
+// Instantiate Fat-Fr
 $f3 = Base::instance();
 $con = new Controller($f3);
 //$dataLayer = new DataLayer($dbh);//Save this for when we create datalayer file

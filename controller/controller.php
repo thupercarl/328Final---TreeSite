@@ -52,7 +52,7 @@ class Controller
             }
             //Otherwise, set an error variable in the hive
             else {
-                $f3->set('errors["fname"]', 'Please enter a first name');
+                $this->_f3->set('errors["fname"]', 'Please enter a first name');
             }
 
             //If lname is valid, store data
@@ -61,7 +61,7 @@ class Controller
             }
             //Otherwise, set an error variable in the hive
             else {
-                $f3->set('errors["lname"]', 'Please enter a last name');
+                $this->_f3->set('errors["lname"]', 'Please enter a last name');
             }
 
             //If username is valid, store data
@@ -70,7 +70,7 @@ class Controller
             }
             //Otherwise, set an error variable in the hive
             else {
-                $f3->set('errors["username"]', 'Please enter a username');
+                $this->_f3->set('errors["username"]', 'Please enter a username');
             }
 
             //If password is valid, store data
@@ -79,7 +79,7 @@ class Controller
             }
             //Otherwise, set an error variable in the hive
             else {
-                $f3->set('errors["password"]', 'Please enter a password');
+                $this->_f3->set('errors["password"]', 'Please enter a password');
             }
 
             //If password is valid, store data
@@ -88,11 +88,11 @@ class Controller
             }
             //Otherwise, set an error variable in the hive
             else {
-                $f3->set('errors["repassword"]', 'Please enter the same password');
+                $this->_f3->set('errors["repassword"]', 'Please enter the same password');
             }
 
             //If the error array is empty, redirect to summary page
-            if (empty($f3->get('errors'))) {
+            if (empty($this->_f3->get('errors'))) {
                 header('location: summary');
             }
         }
