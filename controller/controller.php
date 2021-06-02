@@ -47,7 +47,7 @@ class Controller
             $repassword = $_POST['repassword'];
 
             //If fname is valid, store data
-            if(validName($_POST['fname'])) {
+            if(Model::validName($_POST['fname'])) {
                 $_SESSION['fname'] = $fname;
             }
             //Otherwise, set an error variable in the hive
@@ -56,7 +56,7 @@ class Controller
             }
 
             //If lname is valid, store data
-            if(validName($_POST['lname'])) {
+            if(Model::validName($_POST['lname'])) {
                 $_SESSION['lname'] = $lname;
             }
             //Otherwise, set an error variable in the hive
@@ -65,7 +65,7 @@ class Controller
             }
 
             //If username is valid, store data
-            if(validUsername($_POST['username'])) {
+            if(Model::validUsername($_POST['username'])) {
                 $_SESSION['username'] = $username;
             }
             //Otherwise, set an error variable in the hive
@@ -74,7 +74,7 @@ class Controller
             }
 
             //If password is valid, store data
-            if(validPassword($_POST['password'])) {
+            if(Model::validPassword($_POST['password'])) {
                 $_SESSION['password'] = $password;
             }
             //Otherwise, set an error variable in the hive
@@ -83,7 +83,7 @@ class Controller
             }
 
             //If password is valid, store data
-            if(matchPassword($_POST['password'],$_POST['repassword'])) {
+            if(Model::matchPassword($_POST['password'],$_POST['repassword'])) {
                 $_SESSION['repassword'] = $repassword;
             }
             //Otherwise, set an error variable in the hive

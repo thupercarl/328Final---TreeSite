@@ -18,6 +18,11 @@ body {
     background-color: #333335;
 }
 
+.err {
+    color: darkred;
+    display: none;
+}
+
 .navbar-expand-lg {
     background-color: #559CAD;
     opacity: 0.5;

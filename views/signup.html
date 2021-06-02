@@ -9,7 +9,7 @@
     <div class="text-center row">
         <div class="col-12">
             <!--BEGIN FORM-->
-            <form action="#" method="post" class="form-horizontal bg-white mb-5">
+            <form name="signupForm" action="#" onsubmit="return validateForm()" method="post" class="form-horizontal bg-white mb-5">
                 <div class="form-group">
                     <h2>Signup</h2>
 
@@ -22,6 +22,10 @@
                         <div class="col-sm-4">
                             <input class="form-control" type="text" name="fname" id="fname" value="{{ @SESSION.fname }}" >
 
+                            <span class="err" id="err-fname">
+                                Please enter a first name
+                            </span>
+
                             <!-- display an error message for fname if there is one -->
                             <check if="{{ isset(@errors['fname']) }}">
                                 <span class="err">{{ @errors['fname'] }}</span>
@@ -31,6 +35,10 @@
                         <label for="lname" class="float-left col-sm-2 control-label">User Last Name</label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" name="lname" id="lname" value="{{ @SESSION.lname }}" >
+
+                            <span class="err" id="err-lname">
+                                Please enter a last name
+                            </span>
 
                             <!-- display an error message for lname if there is one -->
                             <check if="{{ isset(@errors['lname']) }}">
@@ -42,6 +50,10 @@
                         <div class="col-sm-4">
                             <input class="form-control" type="text" name="username" id="username" value="{{ @SESSION.username }}" >
 
+                            <span class="err" id="err-username">
+                                Please enter a username
+                            </span>
+
                             <!-- display an error message for username if there is one -->
                             <check if="{{ isset(@errors['username']) }}">
                                 <span class="err">{{ @errors['username'] }}</span>
@@ -51,6 +63,10 @@
                         <label for="password" class="float-left col-sm-2 control-label">Desired Password</label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" name="password" id="password" value="{{ @SESSION.password }}" >
+
+                            <span class="err" id="err-password">
+                                Please enter a password
+                            </span>
 
                             <!-- display an error message for password if there is one -->
                             <check if="{{ isset(@errors['password']) }}">
@@ -86,5 +102,6 @@
 <include href="includes/footer.html" />
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="../scripts/script.js"></script>
 </body>
 </html>
