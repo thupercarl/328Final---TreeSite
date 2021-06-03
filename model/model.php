@@ -21,5 +21,10 @@ class Model
     {
         return $password == $repassword;
     }
+
+    static function validFavTree($favtree)
+    {
+        return strLen(trim($favtree)) >= 2;
+    }
 }
 

@@ -9,7 +9,7 @@
     <div class="text-center row">
         <div class="col-12">
             <!--BEGIN FORM-->
-            <form name="signupForm" action="#" onsubmit="return validateForm()" method="post" class="form-horizontal bg-white mb-5">
+            <form name="signupForm" action="#" onsubmit="return validateForm()" method="post" class="form-horizontal bg-white mb-5 rounded">
                 <div class="form-group">
                     <h2>Signup</h2>
 
@@ -17,7 +17,7 @@
                         <img src="images/woodland-wiki-green.png" class="img-fluid float-right" alt="logo" style="width:256px;height:256px;"> <br>
                     </div>
 
-                    <div class="col-sm">
+                    <div class="row">
                         <label for="fname" class="float-left col-sm-2 control-label">User First Name</label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" name="fname" id="fname" value="{{ @SESSION.fname }}" >
@@ -83,13 +83,30 @@
                                 <span class="err">{{ @errors['repassword'] }}</span>
                             </check>
                         </div>
+
+                        <label for="favtree" class="float-left col-sm-2 control-label">Your Favorite Tree</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="favtree" id="favtree" value="{{ @SESSION.favtree }}">
+
+                            <!-- display an error message for favtree if there is one -->
+                            <check if="{{ isset(@errors['favtree']) }}">
+                                <span class="err">{{ @errors['favtree'] }}</span>
+                            </check>
+                        </div>
+
+                        <div class="col-sm-4">
+                        <h4>Premium User</h4>
+                        <label><input type="checkbox"
+                                      name="optin"
+                                      value="premiumacct">Become a Premium User!</label>
+                        </div>
                     </div>
                 </div>
                 <br>
 
                 <!--SUBMIT BUTTON-->
                 <div class="col-xs-3 ">
-                    <input class="form-control btn btn-default"
+                    <input class="form-control btn btn-primary"
                            type="submit" value="Submit">
                 </div>
 
@@ -98,6 +115,9 @@
         </div>
     </div>
 </div> <!--END JUMBOTRON-->
+
+<br>
+<br>
 
 <include href="includes/footer.html" />
 

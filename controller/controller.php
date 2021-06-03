@@ -45,6 +45,7 @@ class Controller
             $username = $_POST['username'];
             $password = $_POST['password'];
             $repassword = $_POST['repassword'];
+            $favtree = $_POST['favtree'];
 
             //If fname is valid, store data
             if(Model::validName($_POST['fname'])) {
@@ -94,6 +95,15 @@ class Controller
             //If the error array is empty, redirect to summary page
             if (empty($this->_f3->get('errors'))) {
                 header('location: summary');
+            }
+
+            //If favorite tree is valid, store data
+            if(Model::validFavTree($_POST['favtree'])) {
+                $_SESSION['favtree'] = $favtree;
+            }
+            //Otherwise, set an error variable in the hive
+            else {
+                $this->_f3->set('errors["favtree"]', 'Please enter a tree name');
             }
         }
 

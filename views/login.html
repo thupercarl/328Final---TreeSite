@@ -6,38 +6,44 @@
 <!--ADD GENERAL NAVBAR-->
 
 <div class="container">
-    <br>
-    <br>
-    <br>
-    <br>
-    <!-- get username -->
-    <div class="form-group">
-        <label for="username" class="col-sm-4 control-label">Your username: </label>
+    <form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- get username -->
+        <div class="form-group">
+            <label for="username" class="col-sm-4 control-label text-light">Your username: </label>
 
-        <div class="col-sm-4 control-label">
-            <input class="form-control" type="text" name="username" id="username" value="{{ @userName }}">
+            <div class="col-sm-4 control-label">
+                <input class="form-control" type="text" name="username" id="username" value="{{ @userName }}">
+            </div>
+
+            <!-- display an error message if there is one -->
+            <check if="{{ isset(@errors['username']) }}">
+                <span class="err">{{ @errors['username'] }}</span>
+            </check>
         </div>
+        <br>
 
-        <!-- display an error message if there is one -->
-        <check if="{{ isset(@errors['username']) }}">
-            <span class="err">{{ @errors['username'] }}</span>
-        </check>
-    </div>
-    <br>
+        <!-- get password -->
+        <div class="form-group">
+            <label for="password" class="col-sm-4 control-label text-light">Your password: </label>
 
-    <!-- get password -->
-    <div class="form-group">
-        <label for="password" class="col-sm-4 control-label">Your password: </label>
+            <div class="col-sm-4 control-label">
+                <input class="form-control" type="text" name="password" id="password" value="{{ @userPassword }}">
+            </div>
 
-        <div class="col-sm-4 control-label">
-            <input class="form-control" type="text" name="password" id="password" value="{{ @userPassword }}">
+            <!-- display an error message if there is one -->
+            <check if="{{ isset(@errors['password']) }}">
+                <span class="err">{{ @errors['password'] }}</span>
+            </check>
         </div>
+        <br><br>
 
-        <!-- display an error message if there is one -->
-        <check if="{{ isset(@errors['password']) }}">
-            <span class="err">{{ @errors['password'] }}</span>
-        </check>
-    </div>
+        <button type="submit" class="loginButton rounded btn btn-primary">Login</button>
+        <br>
+    </form>
 </div>
 
 <include href="includes/footer.html" />
