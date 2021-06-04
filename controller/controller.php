@@ -19,6 +19,12 @@ class Controller
 
     function results()
     {
+        //query db
+        $display = $GLOBALS['dataLayer']->display();
+
+        //add db result to hive
+        $this->_f3->set('display', $display);
+
         //Display the results page
         $view = new Template();
         echo $view->render('views/results.html');

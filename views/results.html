@@ -12,20 +12,24 @@
             <h3>Encyclopedia</h3>
             <table id="tblResults">
                 <thead>
-                <tr class="text-light">
-                    <td>Tree ID</td><td>Genus</td><td>Name</td><td>Scientific Name</td><td>Climate Zone</td><td>Average Height</td><td>Average Width</td><td>Acidic Soil</td><td>Toxic</td><td>Soil Moisture</td><td>Sunlight</td>
+                <tr class="text-dark">
+                    <td>Genus</td><td>Name</td><td>Scientific Name</td><td>Climate Zone</td><td>Coldest Temp</td><td>Average Height</td><td>Average Width</td><td>Acidic Soil</td><td>Toxic</td><td>Soil Moisture</td><td>Sunlight</td>
                 </tr>
                 </thead>
                 <tbody>
-                <repeat group="{{ @orders }}" value="{{ @order }}"><!--OBJECT OR STORED QUERY RESULT GOES HERE-->
+                <repeat group="{{ @display }}" value="{{ @element }}"><!--OBJECT OR STORED QUERY RESULT GOES HERE-->
                     <tr>
-                        <!--
-                        <td>{{ @order['order_id'] }}</td>
-                        <td>{{ @order['food'] }}</td>
-                        <td>{{ @order['meal'] }}</td>
-                        <td>{{ @order['condiments'] }}</td>
-                        <td>{{ @order['order_date'] }}</td>
-                        -->
+                        <td>{{ @element['genus'] }}</td>
+                        <td>{{ @element['name'] }}</td>
+                        <td>{{ @element['scientificName'] }}</td>
+                        <td>{{ @element['climateZone'] }}</td>
+                        <td>{{ @element['coldestTemp'] }}</td>
+                        <td>{{ @element['avgHeight'] }}</td>
+                        <td>{{ @element['avgSpread'] }}</td>
+                        <td>{{ @element['acidicSoil'] }}</td>
+                        <td>{{ @element['toxic'] }}</td>
+                        <td>{{ @element['soilMoisture'] }}</td>
+                        <td>{{ @element['sunlight'] }}</td>
                     </tr>
                 </repeat>
                 </tbody>

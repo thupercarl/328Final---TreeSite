@@ -13,21 +13,10 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/../config_trees.php');
 //Start a session
 session_start();
 
-//Connect to db
-try {
-    //Instantiate a PDO database object
-    $dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-    echo "Connected to database!";
-}
-catch(PDOException $e) {
-    echo $e->getMessage();
-    die("Shoot! We're having connection issues");
-}
-
 // Instantiate Fat-Fr
 $f3 = Base::instance();
 $con = new Controller($f3);
-//$dataLayer = new DataLayer($dbh);//Save this for when we create datalayer file
+$dataLayer = new DataLayer();//Save this for when we create datalayer file
 
 // Define default route
 $f3->route('GET /', function(){
