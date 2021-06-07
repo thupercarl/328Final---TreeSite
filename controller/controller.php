@@ -25,6 +25,9 @@ class Controller
         //add db result to hive
         $this->_f3->set('display', $display);
 
+        //echo var_dump($display);
+
+
         //Display the results page
         $view = new Template();
         echo $view->render('views/results.html');
@@ -38,9 +41,6 @@ class Controller
         //Initialize variables for user input
         $fname = "";
         $lname = "";
-        $username = "";
-        $password = "";
-        $repassword = "";
 
         //If the form has been submitted, validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -48,10 +48,33 @@ class Controller
 
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $repassword = $_POST['repassword'];
-            $favtree = $_POST['favtree'];
+            $treeName = $_POST['treeName'];
+            $treeScientificName = $_POST['treeScientificName'];
+            $treeGenus = $_POST['treeGenus'];
+            $treeClimateZone = $_POST['treeClimateZone'];
+            $treeColdestTemp = $_POST['treeColdestTemp'];
+            $treeAvgHeight = $_POST['treeAvgHeight'];
+            $treeAvgSpread = $_POST['treeAvgSpread'];
+            $treeAcidicSoil = $_POST['treeAcidicSoil'];
+            $treeSoilMoisture = $_POST['treeSoilMoisture'];
+            $treeSunlight = $_POST['treeSunlight'];
+
+            //grabbing user input and putting into tree objects
+            $_SESSION['climate'] = new Climate($treeClimateZone, $treeColdestTemp);
+            $_SESSION['species'] = new Species(
+                $treeName,
+                $treeScientificName,
+                $treeAvgHeight,
+                $treeAvgSpread,
+                $treeAcidicSoil,
+                $treeSoilMoisture,
+                $treeSunlight,
+                $treeGenus
+            );
+
+            $_SESSION['climate']->setClimateZone($treeClimateZone);
+            $_SESSION['climate']->setColdestTemp($treeColdestTemp);
+
 
             //If fname is valid, store data
             if(Model::validName($_POST['fname'])) {

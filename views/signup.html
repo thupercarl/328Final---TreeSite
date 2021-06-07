@@ -11,14 +11,14 @@
             <!--BEGIN FORM-->
             <form name="signupForm" action="#" onsubmit="return validateForm()" method="post" class="form-horizontal bg-white mb-5 rounded">
                 <div class="form-group">
-                    <h2>Signup</h2>
+                    <h2>Submit a New Tree for Approval</h2>
 
                     <div>
                         <img src="images/woodland-wiki-green.png" class="img-fluid float-right" alt="logo" style="width:256px;height:256px;"> <br>
                     </div>
 
                     <div class="row">
-                        <label for="fname" class="float-left col-sm-2 control-label">User First Name</label>
+                        <label for="fname" class="float-left col-sm-2 control-label">Your First Name</label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" name="fname" id="fname" value="{{ @SESSION.fname }}" >
 
@@ -32,7 +32,7 @@
                             </check>
                         </div>
 
-                        <label for="lname" class="float-left col-sm-2 control-label">User Last Name</label>
+                        <label for="lname" class="float-left col-sm-2 control-label">Your Last Name</label>
                         <div class="col-sm-4">
                             <input class="form-control" type="text" name="lname" id="lname" value="{{ @SESSION.lname }}" >
 
@@ -46,61 +46,72 @@
                             </check>
                         </div>
 
-                        <label for="username" class="float-left col-sm-2 control-label">Desired Username</label>
+
+                        <!--BEGIN ASKING USER ABOUT THE TREE THEY'D LIKE TO SUBMIT-->
+                        <label for="treeName" class="float-left col-sm-2 control-label">Your Favorite Tree</label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" name="username" id="username" value="{{ @SESSION.username }}" >
+                            <input class="form-control" type="text" name="treeName" id="treeName" value="{{ @SESSION.treeName }}">
 
-                            <span class="err" id="err-username">
-                                Please enter a username
-                            </span>
-
-                            <!-- display an error message for username if there is one -->
-                            <check if="{{ isset(@errors['username']) }}">
-                                <span class="err">{{ @errors['username'] }}</span>
+                            <!-- display an error message for treeName if there is one -->
+                            <check if="{{ isset(@errors['treeName']) }}">
+                                <span class="err">{{ @errors['treeName'] }}</span>
                             </check>
                         </div>
+                    </div><!--END OF ROW-->
 
-                        <label for="password" class="float-left col-sm-2 control-label">Desired Password</label>
+                    <hr class="border">
+                    <div class="row">
+                        <h6 class="ml-3">The following fields are optional, but help us to see how your tree qualifies in the encyclopedia</h6>
+                    </div>
+
+                    <div class="row">
+                        <label for="treeScientificName" class="float-left col-sm-2 control-label">It's Scientific Name</label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" name="password" id="password" value="{{ @SESSION.password }}" >
-
-                            <span class="err" id="err-password">
-                                Please enter a password
-                            </span>
-
-                            <!-- display an error message for password if there is one -->
-                            <check if="{{ isset(@errors['password']) }}">
-                                <span class="err">{{ @errors['password'] }}</span>
-                            </check>
+                            <input class="form-control" type="text" name="treeScientificName" id="treeScientificName" value="{{ @SESSION.treeScientificName }}">
                         </div>
 
-                        <label for="repassword" class="float-left col-sm-2 control-label">Retype Password</label>
+                        <label for="treeGenus" class="float-left col-sm-2 control-label">The Genus</label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" name="repassword" id="repassword">
-
-                            <!-- display an error message for repassword if there is one -->
-                            <check if="{{ isset(@errors['repassword']) }}">
-                                <span class="err">{{ @errors['repassword'] }}</span>
-                            </check>
+                            <input class="form-control" type="text" name="treeGenus" id="treeGenus" value="{{ @SESSION.treeGenus }}">
                         </div>
 
-                        <label for="favtree" class="float-left col-sm-2 control-label">Your Favorite Tree</label>
+                        <label for="treeClimateZone" class="float-left col-sm-2 control-label">Main Climate Zone</label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" name="favtree" id="favtree" value="{{ @SESSION.favtree }}">
-
-                            <!-- display an error message for favtree if there is one -->
-                            <check if="{{ isset(@errors['favtree']) }}">
-                                <span class="err">{{ @errors['favtree'] }}</span>
-                            </check>
+                            <input class="form-control" type="text" name="treeClimateZone" id="treeClimateZone" value="{{ @SESSION.climate->getClimateZone() }}">
                         </div>
 
+                        <label for="treeColdestTemp" class="float-left col-sm-2 control-label">Coldest Temperature</label>
                         <div class="col-sm-4">
-                        <h4>Premium User</h4>
-                        <label><input type="checkbox"
-                                      name="optin"
-                                      value="premiumacct">Become a Premium User!</label>
+                            <input class="form-control" type="text" name="treeColdestTemp" id="treeColdestTemp" value="{{ @SESSION.treeColdestTemp }}">
+                        </div>
+
+                        <label for="treeAvgHeight" class="float-left col-sm-2 control-label">It's Average Height</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="treeAvgHeight" id="treeAvgHeight" value="{{ @SESSION.treeAvgHeight }}">
+                        </div>
+
+                        <label for="treeAvgSpread" class="float-left col-sm-2 control-label">It's Average Width Including Branches</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="treeAvgSpread" id="treeAvgSpread" value="{{ @SESSION.treeAvgSpread }}">
+                        </div>
+
+                        <label for="treeAcidicSoil" class="float-left col-sm-2 control-label">The Acidity of the Soil it Grows in</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="treeAcidicSoil" id="treeAcidicSoil" value="{{ @SESSION.treeAcidicSoil }}">
+                        </div>
+
+                        <label for="treeSoilMoisture" class="float-left col-sm-2 control-label">The Moisture of the Soil it Grows in</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="treeSoilMoisture" id="treeSoilMoisture" value="{{ @SESSION.treeSoilMoisture }}">
+                        </div>
+
+                        <label for="treeSunlight" class="float-left col-sm-2 control-label">The Average Amount of Sunlight it Needs</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="treeSunlight" id="treeSunlight" value="{{ @SESSION.treeSunlight }}">
                         </div>
                     </div>
+
+
                 </div>
                 <br>
 
