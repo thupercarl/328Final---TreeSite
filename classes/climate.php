@@ -29,7 +29,7 @@ class Climate
      * sets climate
      * @param mixed $climateZone
      */
-    public function setClimateZone($climateZone): void
+    public function setClimateZone($climateZone)
     {
         $this->_climateZone = $climateZone;
     }
@@ -47,7 +47,7 @@ class Climate
      * sets coldest temp
      * @param mixed $coldestTemp
      */
-    public function setColdestTemp($coldestTemp): void
+    public function setColdestTemp($coldestTemp)
     {
         $this->_coldestTemp = $coldestTemp;
     }

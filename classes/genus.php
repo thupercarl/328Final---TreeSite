@@ -26,7 +26,7 @@ class Genus
      * sets genus
      * @param mixed $genus
      */
-    public function setGenus($genus): void
+    public function setGenus($genus)
     {
         $this->_genus = $genus;
     }

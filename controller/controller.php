@@ -60,17 +60,8 @@ class Controller
             $treeSunlight = $_POST['treeSunlight'];
 
             //grabbing user input and putting into tree objects
-            $_SESSION['climate'] = new Climate($treeClimateZone, $treeColdestTemp);
-            $_SESSION['species'] = new Species(
-                $treeName,
-                $treeScientificName,
-                $treeAvgHeight,
-                $treeAvgSpread,
-                $treeAcidicSoil,
-                $treeSoilMoisture,
-                $treeSunlight,
-                $treeGenus
-            );
+            $_SESSION['climate'] = new Climate();
+            $_SESSION['species'] = new Species();
 
             $_SESSION['climate']->setClimateZone($treeClimateZone);
             $_SESSION['climate']->setColdestTemp($treeColdestTemp);

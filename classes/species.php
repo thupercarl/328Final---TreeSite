@@ -23,7 +23,7 @@ class Species extends Genus
      * sets name
      * @param mixed $name
      */
-    public function setName($name): void
+    public function setName($name)
     {
         $this->_name = $name;
     }
@@ -41,7 +41,7 @@ class Species extends Genus
      * sets scientific name
      * @param mixed $scientificName
      */
-    public function setScientificName($scientificName): void
+    public function setScientificName($scientificName)
     {
         $this->_scientificName = $scientificName;
     }
@@ -59,7 +59,7 @@ class Species extends Genus
      * sets average height
      * @param mixed $avgHeight
      */
-    public function setAvgHeight($avgHeight): void
+    public function setAvgHeight($avgHeight)
     {
         $this->_avgHeight = $avgHeight;
     }
@@ -77,7 +77,7 @@ class Species extends Genus
      * sets average spread
      * @param mixed $avgSpread
      */
-    public function setAvgSpread($avgSpread): void
+    public function setAvgSpread($avgSpread)
     {
         $this->_avgSpread = $avgSpread;
     }
@@ -95,7 +95,7 @@ class Species extends Genus
      * sets acidic soil
      * @param mixed $acidicSoil
      */
-    public function setAcidicSoil($acidicSoil): void
+    public function setAcidicSoil($acidicSoil)
     {
         $this->_acidicSoil = $acidicSoil;
     }
@@ -113,7 +113,7 @@ class Species extends Genus
      * sets soil moisture
      * @param mixed $soilMoisture
      */
-    public function setSoilMoisture($soilMoisture): void
+    public function setSoilMoisture($soilMoisture)
     {
         $this->_soilMoisture = $soilMoisture;
     }
@@ -131,7 +131,7 @@ class Species extends Genus
      * sets sunlight
      * @param mixed $sunlight
      */
-    public function setSunlight($sunlight): void
+    public function setSunlight($sunlight)
     {
         $this->_sunlight = $sunlight;
     }
