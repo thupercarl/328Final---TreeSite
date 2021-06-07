@@ -39,12 +39,19 @@ class Controller
         $_SESSION = array();
 
         //Initialize variables for user input
-        $fname = "";
-        $lname = "";
+        //$fname = "";
+        //$lname = "";
+
+        //$treeClimateZone = "";
+        //$treeColdestTemp = "";
 
         //If the form has been submitted, validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             //var_dump($_POST);
+            //grabbing user input and putting into tree objects
+            $_SESSION['climate'] = new Climate();
+            $_SESSION['species'] = new Species();
+
 
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
@@ -59,12 +66,17 @@ class Controller
             $treeSoilMoisture = $_POST['treeSoilMoisture'];
             $treeSunlight = $_POST['treeSunlight'];
 
-            //grabbing user input and putting into tree objects
-            $_SESSION['climate'] = new Climate();
-            $_SESSION['species'] = new Species();
-
+            //Set variables to object parameters
             $_SESSION['climate']->setClimateZone($treeClimateZone);
             $_SESSION['climate']->setColdestTemp($treeColdestTemp);
+            $_SESSION['species']->setName($treeName);
+            $_SESSION['species']->setScientificName($treeScientificName);
+            $_SESSION['species']->setGenus($treeGenus);
+            $_SESSION['species']->setAvgHeight($treeAvgHeight);
+            $_SESSION['species']->setAvgSpread($treeAvgSpread);
+            $_SESSION['species']->setAcidicSoil($treeAcidicSoil);
+            $_SESSION['species']->setSoilMoisture($treeSoilMoisture);
+            $_SESSION['species']->setSunlight($treeSunlight);
 
 
             //If fname is valid, store data
@@ -85,46 +97,31 @@ class Controller
                 $this->_f3->set('errors["lname"]', 'Please enter a last name');
             }
 
-            //If username is valid, store data
-            if(Model::validUsername($_POST['username'])) {
-                $_SESSION['username'] = $username;
-            }
-            //Otherwise, set an error variable in the hive
-            else {
-                $this->_f3->set('errors["username"]', 'Please enter a username');
-            }
-
-            //If password is valid, store data
-            if(Model::validPassword($_POST['password'])) {
-                $_SESSION['password'] = $password;
-            }
-            //Otherwise, set an error variable in the hive
-            else {
-                $this->_f3->set('errors["password"]', 'Please enter a password');
-            }
-
-            //If password is valid, store data
-            if(Model::matchPassword($_POST['password'],$_POST['repassword'])) {
-                $_SESSION['repassword'] = $repassword;
-            }
-            //Otherwise, set an error variable in the hive
-            else {
-                $this->_f3->set('errors["repassword"]', 'Please enter the same password');
-            }
-
             //If the error array is empty, redirect to summary page
             if (empty($this->_f3->get('errors'))) {
                 header('location: summary');
             }
 
             //If favorite tree is valid, store data
-            if(Model::validFavTree($_POST['favtree'])) {
-                $_SESSION['favtree'] = $favtree;
+            if(Model::validFavTree($treeName)) {
+                $_SESSION['treeName'] = $treeName;
             }
             //Otherwise, set an error variable in the hive
             else {
                 $this->_f3->set('errors["favtree"]', 'Please enter a tree name');
             }
+
+            //Set rest of session variables if provided
+            $_SESSION['treeScientificName'] = $treeScientificName;
+            $_SESSION['treeGenus'] = $treeGenus;
+            $_SESSION['treeClimateZone'] = $treeClimateZone;
+            $_SESSION['treeColdestTemp'] = $treeColdestTemp;
+            $_SESSION['treeAvgHeight'] = $treeAvgHeight;
+            $_SESSION['treeAvgSpread'] = $treeAvgSpread;
+            $_SESSION['treeAcidicSoil'] = $treeAcidicSoil;
+            $_SESSION['treeSoilMoisture'] = $treeSoilMoisture;
+            $_SESSION['treeSunlight'] = $treeSunlight;
+
         }
 
         //Display the signup page

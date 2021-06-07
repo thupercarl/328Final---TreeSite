@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<include href="includes/head.html" />
+<!--BOILER-PLATE INCLUDE-->
 
+<body>
+<include href="includes/navbar.html" />
+<!--ADD GENERAL NAVBAR-->
+
+<div class="jumbotron bg-white backdrop-img mt-1">
+    <div class="text-center row">
+        <div class="col-12">
+            <h1 class="text-light">Thanks for your submission, {{ @SESSION.fname }}!</h1>
+            <div class="row bg-light rounded">
+                <div class="col-sm">
+                    <h6>Tree Name</h6>
+                    <p>{{ @SESSION.species->getName() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Scientific Name</h6>
+                    <p>{{ @SESSION.species->getScientificName() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Genus</h6>
+                    <p>{{ @SESSION.species->getGenus() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Zone</h6>
+                    <p>{{ @SESSION.climate->getClimateZone() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Temp</h6>
+                    <p>{{ @SESSION.climate->getColdestTemp() }}</p>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row bg-light rounded">
+                <div class="col-sm">
+                    <h6>Height</h6>
+                    <p>{{ @SESSION.species->getAvgHeight() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Width</h6>
+                    <p>{{ @SESSION.species->getAvgSpread() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Acidity</h6>
+                    <p>{{ @SESSION.species->getAcidicSoil() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Moisture</h6>
+                    <p>{{ @SESSION.species->getSoilMoisture() }}</p>
+                </div>
+                <div class="col-sm">
+                    <h6>Sunlight</h6>
+                    <p>{{ @SESSION.species->getSunlight() }}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+
+<include href="includes/footer.html" />
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -26,5 +26,10 @@ class Model
     {
         return strLen(trim($favtree)) >= 2;
     }
+
+    static function checkFilled($field)
+    {
+        return strLen(trim($field)) >= 1;
+    }
 }
 
