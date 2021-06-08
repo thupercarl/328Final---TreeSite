@@ -32,8 +32,8 @@ species, climate and genus.
  
 4. Data can be viewed and added.
 
--    The results page allows users of the app to view data in the database. Users may also choose to create their 
-own accounts which adds new data to a user table in the database.
+-    The results page allows users of the app to view data in the database. Users may also choose to submit their own
+trees for approval.
   
  
 5. Has a history of commits from both team members to a Git repository. Commits are clearly commented.
@@ -45,7 +45,7 @@ each developer.
 6. Uses OOP, and defines multiple classes, including at least one inheritance relationship.
 
 -   Several classes have been defined, as well having some files being turn into classes. There are two classes 
-that share an inheritance relationship; those being user and premium, which extends user.
+that share an inheritance relationship; those being genus and species, which extends genus.
   
  
 7. Contains full Docblocks for all PHP files and follows PEAR standards.
