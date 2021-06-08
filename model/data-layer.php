@@ -2,11 +2,21 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/../config.php');
 
+/**
+ * Class DataLayer
+ */
 class DataLayer
 {
 
+    /**
+     * database handle
+     * @var PDO
+     */
     private $_dbh;
 
+    /**
+     * DataLayer constructor.
+     */
     function __construct()
     {
         //Connect to db
@@ -21,19 +31,12 @@ class DataLayer
         }
     }
 
+    /**
+     * grab data to display on results page
+     * @return array
+     */
     function display()
     {
-        /*
-        $sql = "SELECT treeID, genus, species.name, scientificName, climateZone, coldestTemp, avgHeight, avgSpread, acidicSoil, toxic, soilMoisture, sunlight
-         FROM species, climate, genus WHERE treeID = climateID";
-        */
-
-        /*
-        $sql = "SELECT * FROM climate 
-INNER JOIN climate_tree ON climate.climateID = climate_tree.climateID
-INNER JOIN species ON climate_tree.treeID = species.treeID;";
-        */
-
         $sql = "SELECT * FROM climate 
                 INNER JOIN climate_tree ON climate.climateID = climate_tree.climateID
                 INNER JOIN species ON climate_tree.treeID = species.treeID 
@@ -47,6 +50,41 @@ INNER JOIN species ON climate_tree.treeID = species.treeID;";
 
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);//grab result as associative array
         return $result;
+    }
+
+    /**
+     * grab data from user and put into user table
+     * @param $species
+     * @param $climate
+     * @param $fname
+     * @param $lname
+     */
+    function addData($species, $climate, $fname, $lname)
+    {
+        //define query
+        $sql = "INSERT INTO user (fName, lName, name, scientificName, genus, climateZone, coldestTemp, avgHeight, avgSpread, acidicSoil, toxic, soilMoisture, sunlight)
+                VALUES (:fName, :lName, :name, :scientificName, :genus, :climateZone, :coldestTemp, :avgHeight, :avgSpread, :acidicSoil, :toxic, :soilMoisture, :sunlight)";
+
+        //prepare statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //bind parameters
+        $statement->bindParam(':fName', $fname, PDO::PARAM_STR);
+        $statement->bindParam(':lName', $lname, PDO::PARAM_STR);
+        $statement->bindParam(':name', $species->getName(), PDO::PARAM_STR);
+        $statement->bindParam(':scientificName', $species->getScientificName(), PDO::PARAM_STR);
+        $statement->bindParam(':genus', $species->getGenus(), PDO::PARAM_STR);
+        $statement->bindParam(':climateZone', $climate->getClimateZone(), PDO::PARAM_STR);
+        $statement->bindParam(':coldestTemp', $climate->getColdestTemp(), PDO::PARAM_STR);
+        $statement->bindParam(':avgHeight', $species->getAvgHeight(), PDO::PARAM_STR);
+        $statement->bindParam(':avgSpread', $species->getAvgSpread(), PDO::PARAM_STR);
+        $statement->bindParam(':acidicSoil', $species->getAcidicSoil(), PDO::PARAM_STR);
+        $statement->bindParam(':toxic', $species->getToxicity(), PDO::PARAM_STR);
+        $statement->bindParam(':soilMoisture', $species->getSoilMoisure(), PDO::PARAM_STR);
+        $statement->bindParam(':sunlight', $species->getSunlight(), PDO::PARAM_STR);
+
+        //execute
+        $statement->execute();
     }
 
 }
