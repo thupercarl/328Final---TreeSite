@@ -15,7 +15,7 @@ class Genus
 
     /**
      * gets genus
-     * @return mixed
+     * @return string
      */
     public function getGenus()
     {
@@ -24,7 +24,7 @@ class Genus
 
     /**
      * sets genus
-     * @param mixed $genus
+     * @param string $genus
      */
     public function setGenus($genus)
     {

@@ -62,15 +62,15 @@ class DataLayer
     function addData($species, $climate, $fname, $lname)
     {
         //define query
-        $sql = "INSERT INTO user (fName, lName, name, scientificName, genus, climateZone, coldestTemp, avgHeight, avgSpread, acidicSoil, toxic, soilMoisture, sunlight)
-                VALUES (:fName, :lName, :name, :scientificName, :genus, :climateZone, :coldestTemp, :avgHeight, :avgSpread, :acidicSoil, :toxic, :soilMoisture, :sunlight)";
+        $sql = "INSERT INTO user (fname, lname, name, scientificName, genus, climateZone, coldestTemp, avgHeight, avgSpread, acidicSoil, toxic, soilMoisture, sunlight)
+                VALUES (:fname, :lname, :name, :scientificName, :genus, :climateZone, :coldestTemp, :avgHeight, :avgSpread, :acidicSoil, :toxic, :soilMoisture, :sunlight)";
 
         //prepare statement
         $statement = $this->_dbh->prepare($sql);
 
         //bind parameters
-        $statement->bindParam(':fName', $fname, PDO::PARAM_STR);
-        $statement->bindParam(':lName', $lname, PDO::PARAM_STR);
+        $statement->bindParam(':fname', $fname, PDO::PARAM_STR);
+        $statement->bindParam(':lname', $lname, PDO::PARAM_STR);
         $statement->bindParam(':name', $species->getName(), PDO::PARAM_STR);
         $statement->bindParam(':scientificName', $species->getScientificName(), PDO::PARAM_STR);
         $statement->bindParam(':genus', $species->getGenus(), PDO::PARAM_STR);

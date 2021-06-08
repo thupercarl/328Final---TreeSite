@@ -13,144 +13,144 @@ class Species extends Genus
 
     /**
      * gets name
-     * @return mixed
+     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->_name;
     }
 
     /**
      * sets name
-     * @param mixed $name
+     * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name): void
     {
         $this->_name = $name;
     }
 
     /**
      * gets scientific name
-     * @return mixed
+     * @return string
      */
-    public function getScientificName()
+    public function getScientificName(): string
     {
         return $this->_scientificName;
     }
 
     /**
      * sets scientific name
-     * @param mixed $scientificName
+     * @param string $scientificName
      */
-    public function setScientificName($scientificName)
+    public function setScientificName(string $scientificName): void
     {
         $this->_scientificName = $scientificName;
     }
 
     /**
      * gets average height
-     * @return mixed
+     * @return string
      */
-    public function getAvgHeight()
+    public function getAvgHeight(): string
     {
         return $this->_avgHeight;
     }
 
     /**
      * sets average height
-     * @param mixed $avgHeight
+     * @param string $avgHeight
      */
-    public function setAvgHeight($avgHeight)
+    public function setAvgHeight(string $avgHeight): void
     {
         $this->_avgHeight = $avgHeight;
     }
 
     /**
      * gets average spread
-     * @return mixed
+     * @return string
      */
-    public function getAvgSpread()
+    public function getAvgSpread(): string
     {
         return $this->_avgSpread;
     }
 
     /**
      * sets average spread
-     * @param mixed $avgSpread
+     * @param string $avgSpread
      */
-    public function setAvgSpread($avgSpread)
+    public function setAvgSpread(string $avgSpread): void
     {
         $this->_avgSpread = $avgSpread;
     }
 
     /**
      * gets acidic soil
-     * @return mixed
+     * @return string
      */
-    public function getAcidicSoil()
+    public function getAcidicSoil(): string
     {
         return $this->_acidicSoil;
     }
 
     /**
      * sets acidic soil
-     * @param mixed $acidicSoil
+     * @param string $acidicSoil
      */
-    public function setAcidicSoil($acidicSoil)
+    public function setAcidicSoil(string $acidicSoil): void
     {
         $this->_acidicSoil = $acidicSoil;
     }
 
     /**
      * gets tree toxicity
-     * @return mixed
+     * @return string
      */
-    public function getToxic()
+    public function getToxic(): string
     {
         return $this->_toxic;
     }
 
     /**
      * sets tree toxicity
-     * @param mixed $toxic
+     * @param string $toxic
      */
-    public function setToxic($toxic)
+    public function setToxic(string $toxic): void
     {
         $this->_toxic = $toxic;
     }
 
     /**
      * gets soil moisture
-     * @return mixed
+     * @return string
      */
-    public function getSoilMoisture()
+    public function getSoilMoisture(): string
     {
         return $this->_soilMoisture;
     }
 
     /**
      * sets soil moisture
-     * @param mixed $soilMoisture
+     * @param string $soilMoisture
      */
-    public function setSoilMoisture($soilMoisture)
+    public function setSoilMoisture(string $soilMoisture): void
     {
         $this->_soilMoisture = $soilMoisture;
     }
 
     /**
      * gets sunlight
-     * @return mixed
+     * @return string
      */
-    public function getSunlight()
+    public function getSunlight(): string
     {
         return $this->_sunlight;
     }
 
     /**
      * sets sunlight
-     * @param mixed $sunlight
+     * @param string $sunlight
      */
-    public function setSunlight($sunlight)
+    public function setSunlight(string $sunlight): void
     {
         $this->_sunlight = $sunlight;
     }
