@@ -134,6 +134,10 @@ class Controller
 
     function summary()
     {
+        //save data to database
+        $userSub = $GLOBALS['dataLayer']->addData($_SESSION['species'], $_SESSION['climate'], $_SESSION['species'], $_SESSION['fname'], $_SESSION['lname']);
+        $this->_f3->set('userSub', $userSub);
+
         //Display the summary page
         $view = new Template();
         echo $view->render('views/summary.html');
