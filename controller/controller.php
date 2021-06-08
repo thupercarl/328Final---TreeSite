@@ -63,6 +63,7 @@ class Controller
             $treeAvgHeight = $_POST['treeAvgHeight'];
             $treeAvgSpread = $_POST['treeAvgSpread'];
             $treeAcidicSoil = $_POST['treeAcidicSoil'];
+            $treeToxic = $_POST['treeToxic'];
             $treeSoilMoisture = $_POST['treeSoilMoisture'];
             $treeSunlight = $_POST['treeSunlight'];
 
@@ -75,6 +76,7 @@ class Controller
             $_SESSION['species']->setAvgHeight($treeAvgHeight);
             $_SESSION['species']->setAvgSpread($treeAvgSpread);
             $_SESSION['species']->setAcidicSoil($treeAcidicSoil);
+            $_SESSION['species']->setToxic($treeToxic);
             $_SESSION['species']->setSoilMoisture($treeSoilMoisture);
             $_SESSION['species']->setSunlight($treeSunlight);
 
@@ -119,6 +121,7 @@ class Controller
             $_SESSION['treeAvgHeight'] = $treeAvgHeight;
             $_SESSION['treeAvgSpread'] = $treeAvgSpread;
             $_SESSION['treeAcidicSoil'] = $treeAcidicSoil;
+            $_SESSION['treeToxic'] = $treeToxic;
             $_SESSION['treeSoilMoisture'] = $treeSoilMoisture;
             $_SESSION['treeSunlight'] = $treeSunlight;
 

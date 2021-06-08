@@ -7,6 +7,7 @@ class Species extends Genus
     private $_avgHeight;
     private $_avgSpread;
     private $_acidicSoil;
+    private $_toxic;
     private $_soilMoisture;
     private $_sunlight;
 
@@ -98,6 +99,24 @@ class Species extends Genus
     public function setAcidicSoil($acidicSoil)
     {
         $this->_acidicSoil = $acidicSoil;
+    }
+
+    /**
+     * gets tree toxicity
+     * @return mixed
+     */
+    public function getToxic()
+    {
+        return $this->_toxic;
+    }
+
+    /**
+     * sets tree toxicity
+     * @param mixed $toxic
+     */
+    public function setToxic($toxic)
+    {
+        $this->_toxic = $toxic;
     }
 
     /**
