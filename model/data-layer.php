@@ -61,6 +61,10 @@ class DataLayer
      */
     function addData($species, $climate, $fname, $lname)
     {
+        echo "<pre>";
+        var_dump($species);
+        var_dump($climate);
+        echo "</pre>";
         //define query
         $sql = "INSERT INTO user (fname, lname, name, scientificName, genus, climateZone, coldestTemp, avgHeight, avgSpread, acidicSoil, toxic, soilMoisture, sunlight)
                 VALUES (:fname, :lname, :name, :scientificName, :genus, :climateZone, :coldestTemp, :avgHeight, :avgSpread, :acidicSoil, :toxic, :soilMoisture, :sunlight)";
@@ -79,8 +83,8 @@ class DataLayer
         $statement->bindParam(':avgHeight', $species->getAvgHeight(), PDO::PARAM_STR);
         $statement->bindParam(':avgSpread', $species->getAvgSpread(), PDO::PARAM_STR);
         $statement->bindParam(':acidicSoil', $species->getAcidicSoil(), PDO::PARAM_STR);
-        $statement->bindParam(':toxic', $species->getToxicity(), PDO::PARAM_STR);
-        $statement->bindParam(':soilMoisture', $species->getSoilMoisure(), PDO::PARAM_STR);
+        $statement->bindParam(':toxic', $species->getToxic(), PDO::PARAM_STR);
+        $statement->bindParam(':soilMoisture', $species->getSoilMoisture(), PDO::PARAM_STR);
         $statement->bindParam(':sunlight', $species->getSunlight(), PDO::PARAM_STR);
 
         //execute

@@ -134,8 +134,9 @@ class Controller
 
     function summary()
     {
+        var_dump($_SESSION);
         //save data to database
-        $userSub = $GLOBALS['dataLayer']->addData($_SESSION['species'], $_SESSION['climate'], $_SESSION['species'], $_SESSION['fname'], $_SESSION['lname']);
+        $userSub = $GLOBALS['dataLayer']->addData($_SESSION['species'], $_SESSION['climate'], $_SESSION['fname'], $_SESSION['lname']);
         $this->_f3->set('userSub', $userSub);
 
         //Display the summary page
