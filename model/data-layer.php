@@ -45,7 +45,6 @@ class DataLayer
         $statement = $this->_dbh->prepare($sql);
 
         //no parameters to bind
-
         $statement->execute();
 
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);//grab result as associative array
@@ -61,10 +60,10 @@ class DataLayer
      */
     function addData($species, $climate, $fname, $lname)
     {
-        echo "<pre>";
-        var_dump($species);
-        var_dump($climate);
-        echo "</pre>";
+        //echo "<pre>";
+        //var_dump($species);
+        //var_dump($climate);
+        //echo "</pre>";
         //define query
         $sql = "INSERT INTO user (fname, lname, name, scientificName, genus, climateZone, coldestTemp, avgHeight, avgSpread, acidicSoil, toxic, soilMoisture, sunlight)
                 VALUES (:fname, :lname, :name, :scientificName, :genus, :climateZone, :coldestTemp, :avgHeight, :avgSpread, :acidicSoil, :toxic, :soilMoisture, :sunlight)";
@@ -89,6 +88,19 @@ class DataLayer
 
         //execute
         $statement->execute();
+    }
+
+    function viewUser()
+    {
+        $sql = "SELECT * FROM user";
+
+        $statement = $this->_dbh->prepare($sql);
+
+        //no parameters to bind
+        $statement->execute();
+
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);//grab result as associative array
+        return $result;
     }
 
 }

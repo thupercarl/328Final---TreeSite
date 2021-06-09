@@ -1,15 +1,30 @@
 <?php
 
 //Controller class to conntect to index
+
+/**
+ * Class Controller
+ */
 class Controller
 {
+    /**
+     * the routing variable
+     * @var
+     */
     private $_f3; //router
 
+    /**
+     * Controller constructor.
+     * @param $f3
+     */
     function __construct($f3)
     {
         $this->_f3 = $f3;
     }
 
+    /**
+     * Displays the home page
+     */
     function home()
     {
         // Display the home page
@@ -17,6 +32,9 @@ class Controller
         echo $view->render('views/home.html');
     }
 
+    /**
+     * Displays the results page
+     */
     function results()
     {
         //query db
@@ -33,17 +51,13 @@ class Controller
         echo $view->render('views/results.html');
     }
 
+    /**
+     * displays the signup page
+     */
     function signup()
     {
         //Reinitialize session array
         $_SESSION = array();
-
-        //Initialize variables for user input
-        //$fname = "";
-        //$lname = "";
-
-        //$treeClimateZone = "";
-        //$treeColdestTemp = "";
 
         //If the form has been submitted, validate the data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -132,9 +146,12 @@ class Controller
         echo $view->render('views/signup.html');
     }
 
+    /**
+     * Displays the summary page
+     */
     function summary()
     {
-        var_dump($_SESSION);
+        //var_dump($_SESSION);
         //save data to database
         $userSub = $GLOBALS['dataLayer']->addData($_SESSION['species'], $_SESSION['climate'], $_SESSION['fname'], $_SESSION['lname']);
         $this->_f3->set('userSub', $userSub);
@@ -144,22 +161,17 @@ class Controller
         echo $view->render('views/summary.html');
     }
 
-    function login()
-    {
-        //Display the login page
-        $view = new Template();
-        echo $view->render('views/login.html');
-    }
-
-    function admin()
-    {
-        //Display the admin page
-        $view = new Template();
-        echo $view->render('views/admin.html');
-    }
-
+    /**
+     * Displays the user page
+     */
     function user()
     {
+        //query db
+        $viewUser = $GLOBALS['dataLayer']->viewUser();
+
+        //add db result to hive
+        $this->_f3->set('viewUser', $viewUser);
+
         //Display the user page
         $view = new Template();
         echo $view->render('views/user.html');

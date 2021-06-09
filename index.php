@@ -39,16 +39,6 @@ $f3->route('GET /summary', function(){
     $GLOBALS['con']->summary();
 });
 
-// Define login route
-$f3->route('GET /login', function(){
-    $GLOBALS['con']->login();
-});
-
-// Define admin route
-$f3->route('GET /admin', function(){
-    $GLOBALS['con']->admin();
-});
-
 // Define user page route
 $f3->route('GET /user', function(){
     $GLOBALS['con']->user();

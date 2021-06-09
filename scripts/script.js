@@ -9,7 +9,7 @@
         }
     }
 
-    /* Validate the pizza form */
+    /* Validate the tree sub form */
     function validate() {
 
         clearErrors();
@@ -32,6 +32,15 @@
             let errLname = document.getElementById("err-lname");
             errLname.classList.remove("d-none");
             //alert("Last name is required");
+            isValid = false; //Stay on the page
+        }
+
+        //Validate treeName name
+        let tree = document.getElementById("treeName").value;
+        if (tree == "") {
+            let errTreeName = document.getElementById("err-treeName");
+            errTreeName.classList.remove("d-none");
+            //alert("Tree name is required");
             isValid = false; //Stay on the page
         }
         return isValid;

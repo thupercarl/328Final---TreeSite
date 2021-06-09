@@ -52,6 +52,10 @@
                             <div class="col-sm-4">
                                 <input class="form-control" type="text" name="treeName" id="treeName" value="{{ @SESSION.treeName }}">
 
+                                <span class="err" id="err-treeName">
+                                    Please enter a tree name
+                                </span>
+
                                 <!-- display an error message for treeName if there is one -->
                                 <check if="{{ isset(@errors['treeName']) }}">
                                     <span class="err">{{ @errors['treeName'] }}</span>
