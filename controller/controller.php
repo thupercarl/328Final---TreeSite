@@ -124,7 +124,7 @@ class Controller
             }
             //Otherwise, set an error variable in the hive
             else {
-                $this->_f3->set('errors["favtree"]', 'Please enter a tree name');
+                $this->_f3->set('errors["treeName"]', 'Please enter a tree name');
             }
 
             //Set rest of session variables if provided
