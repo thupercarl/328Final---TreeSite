@@ -1,10 +1,10 @@
-    alert("Hello");
+    //alert("Hello");
     let form = document.getElementById("signupForm");
     form.onsubmit = validate;
 
     /* Make all error messages invisible */
     function clearErrors() {
-        let errors = document.getElementsByClassName("text-danger");
+        let errors = document.getElementsByClassName("err");
         for (let i=0; i<errors.length; i++) {
             errors[i].classList.add("d-none");
         }
@@ -22,6 +22,7 @@
         let first = document.getElementById("fname").value;
         if (first == "") {
             let errFname = document.getElementById("err-fname");
+            errFname.style.display = "inline";
             errFname.classList.remove("d-none");
             //alert("First name is required");
             isValid = false; //Stay on the page
@@ -31,6 +32,7 @@
         let last = document.getElementById("lname").value;
         if (last == "") {
             let errLname = document.getElementById("err-lname");
+            errLname.style.display = "inline";
             errLname.classList.remove("d-none");
             //alert("Last name is required");
             isValid = false; //Stay on the page
@@ -40,6 +42,7 @@
         let tree = document.getElementById("treeName").value;
         if (tree == "") {
             let errTreeName = document.getElementById("err-treeName");
+            errTreeName.style.display = "inline";
             errTreeName.classList.remove("d-none");
             //alert("Tree name is required");
             isValid = false; //Stay on the page
