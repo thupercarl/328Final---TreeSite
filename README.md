@@ -72,7 +72,7 @@ on this app.
     
 ***
 # UML Class Diagram
-![](images/uml_diagram.png)
+![](images/uml_diagram_updated.png)
 
 # ER Database Diagram
-![](images/er_diagram.png)
+![](images/er_diagram_updated.png)
