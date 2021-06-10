@@ -119,7 +119,7 @@ class Controller
             }
 
             //If favorite tree is valid, store data
-            if(Model::validFavTree($treeName)) {
+            if(!Model::validtreeName($treeName)) {
                 $_SESSION['treeName'] = $treeName;
             }
             //Otherwise, set an error variable in the hive

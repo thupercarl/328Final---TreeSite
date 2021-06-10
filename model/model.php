@@ -20,7 +20,7 @@ class Model
      * @param $favtree
      * @return bool
      */
-    static function validFavTree($favtree): bool
+    static function validTreeName($favtree): bool
     {
         return strLen(trim($favtree)) >= 2;
     }

@@ -1,4 +1,5 @@
-    let form = document.getElementById("pizzaform");
+    alert("Hello");
+    let form = document.getElementById("signupForm");
     form.onsubmit = validate;
 
     /* Make all error messages invisible */
