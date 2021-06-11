@@ -1,10 +1,3 @@
-<!--
-  Genus class file
-  Authors: Jake Donaldson & Aubrey Davies
-  File: genus.php
-  Date: 6/15/2021
--->
-
 <?php
 
 class Genus

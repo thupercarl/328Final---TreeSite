@@ -1,10 +1,3 @@
-<!--
-  Climate class file
-  Authors: Jake Donaldson & Aubrey Davies
-  File: climate.php
-  Date: 6/15/2021
--->
-
 <?php
 
 class Climate
