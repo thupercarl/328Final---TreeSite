@@ -1,10 +1,3 @@
-<!--
-  This file contains the routing for the Woodland Wiki pages
-  Authors: Jake Donaldson & Aubrey Davies
-  File: index.php
-  Date: 6/15/2021
--->
-
 <?php
 
 // This is my controller for the Final project
