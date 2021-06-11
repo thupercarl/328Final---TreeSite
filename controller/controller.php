@@ -1,6 +1,11 @@
-<?php
+<!--
+  Controller class to connect to index
+  Authors: Jake Donaldson & Aubrey Davies
+  File: controller.php
+  Date: 6/15/2021
+-->
 
-//Controller class to conntect to index
+<?php
 
 /**
  * Class Controller

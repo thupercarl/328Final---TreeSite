@@ -1,3 +1,10 @@
+/*
+  This is the javascript for the Woodland Wiki website
+  Authors: Jake Donaldson & Aubrey Davies
+  File: script.js
+  Date: 6/15/2021
+*/
+
     //alert("Hello");
     let form = document.getElementById("signupForm");
     form.onsubmit = validate;

@@ -1,3 +1,10 @@
+<!--
+  Data-Layer class file for data preparation
+  Authors: Jake Donaldson & Aubrey Davies
+  File: data-layer.php
+  Date: 6/15/2021
+-->
+
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/../config.php');

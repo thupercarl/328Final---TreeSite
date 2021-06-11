@@ -1,6 +1,9 @@
 /*
-styles.css
- */
+  This is the stylesheet for the Woodland Wiki website
+  Authors: Jake Donaldson & Aubrey Davies
+  File: styles.css
+  Date: 6/15/2021
+*/
 
 .backdrop-img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),

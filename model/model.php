@@ -1,3 +1,10 @@
+<!--
+  Model class for data validation
+  Authors: Jake Donaldson & Aubrey Davies
+  File: model.php
+  Date: 6/15/2021
+-->
+
 <?php
 
 /**
