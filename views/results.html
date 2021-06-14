@@ -20,7 +20,7 @@
             <table id="tblResults">
                 <thead>
                 <tr class="text-dark">
-                    <td>Genus</td><td>Name</td><td>Scientific Name</td><td>Climate Zone</td><td>Coldest Temp</td><td>Average Height</td><td>Average Width</td><td>Acidic Soil</td><td>Toxic</td><td>Soil Moisture</td><td>Sunlight</td>
+                    <td>Genus</td><td>Name</td><td>Scientific Name</td><td>Average Height</td><td>Average Width</td><td>Acidic Soil</td><td>Toxic</td><td>Soil Moisture</td><td>Sunlight</td>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,8 +29,34 @@
                         <td>{{ @element['genus'] }}</td>
                         <td>{{ @element['name'] }}</td>
                         <td>{{ @element['scientificName'] }}</td>
+                        <td>{{ @element['avgHeight'] }}</td>
+                        <td>{{ @element['avgSpread'] }}</td>
+                        <td>{{ @element['acidicSoil'] }}</td>
+                        <td>{{ @element['toxic'] }}</td>
+                        <td>{{ @element['soilMoisture'] }}</td>
+                        <td>{{ @element['sunlight'] }}</td>
+                    </tr>
+                </repeat>
+                </tbody>
+            </table>
+
+            <br>
+            <br>
+
+            <table id="tblResults2">
+                <thead>
+                <tr class="text-dark">
+                    <td>Climate Zone</td><td>Coldest Temp</td><td>Genus</td><td>Name</td><td>Scientific Name</td><td>Average Height</td><td>Average Width</td><td>Acidic Soil</td><td>Toxic</td><td>Soil Moisture</td><td>Sunlight</td>
+                </tr>
+                </thead>
+                <tbody>
+                <repeat group="{{ @display2 }}" value="{{ @element }}"><!--OBJECT OR STORED QUERY RESULT GOES HERE-->
+                    <tr>
                         <td>{{ @element['climateZone'] }}</td>
                         <td>{{ @element['coldestTemp'] }}</td>
+                        <td>{{ @element['genus'] }}</td>
+                        <td>{{ @element['name'] }}</td>
+                        <td>{{ @element['scientificName'] }}</td>
                         <td>{{ @element['avgHeight'] }}</td>
                         <td>{{ @element['avgSpread'] }}</td>
                         <td>{{ @element['acidicSoil'] }}</td>
@@ -54,6 +80,7 @@
 
 <script>
     $('#tblResults').DataTable();
+    $('#tblResults2').DataTable();
 </script>
 </body>
 </html>

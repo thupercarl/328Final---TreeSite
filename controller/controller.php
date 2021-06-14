@@ -41,6 +41,12 @@ class Controller
         //add db result to hive
         $this->_f3->set('display', $display);
 
+        //query db
+        $display2 = $GLOBALS['dataLayer']->display2();
+
+        //add db result to hive
+        $this->_f3->set('display2', $display2);
+
         //echo var_dump($display);
 
 

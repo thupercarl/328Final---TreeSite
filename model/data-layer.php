@@ -37,10 +37,29 @@ class DataLayer
      */
     function display()
     {
-        $sql = "SELECT * FROM climate 
-                INNER JOIN climate_tree ON climate.climateID = climate_tree.climateID
-                INNER JOIN species ON climate_tree.treeID = species.treeID 
+        $sql = "SELECT * FROM species 
                 INNER JOIN genus on species.genusID = genus.genusID";
+
+        $statement = $this->_dbh->prepare($sql);
+
+        //no parameters to bind
+        $statement->execute();
+
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);//grab result as associative array
+        return $result;
+    }
+
+    /**
+     * grab data to display on results page
+     * @return array
+     */
+    function display2()
+    {
+        $sql = "SELECT * FROM climate
+                INNER JOIN climate_tree ON climate.climateID = climate_tree.climateID
+                INNER JOIN species ON climate_tree.treeID = species.treeID
+                INNER JOIN genus on species.genusID = genus.genusID
+                ORDER BY climateZone";
 
         $statement = $this->_dbh->prepare($sql);
 
@@ -89,6 +108,7 @@ class DataLayer
         //execute
         $statement->execute();
     }
+
 
     function viewUser()
     {
